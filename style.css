@@ -111,3 +111,76 @@ html,body{height:100%;margin:0;background:var(--bg);color:#111}
     margin-top: 10px;
     font-size: 0.9em;
 }
+@media (prefers-color-scheme: dark) {
+
+    /* 1. Inversão do Design System no :root */
+    :root {
+        /* Cores de Fundo Invertidas */
+        --cor-fundo: #121212; /* Fundo muito escuro */
+        --cor-principal-claro: #1e1e1e; /* Cor para elementos/cards */
+        
+        /* Cores de Texto Invertidas */
+        --cor-texto-principal: #f0f0f0; /* Texto claro (alto contraste) */
+        --cor-texto-secundario: #aaaaaa; 
+        
+        /* Mantém a cor de destaque (primária) para consistência visual */
+        --cor-primaria: #0096ff; 
+        
+        /* Garante alto contraste para o foco de teclado */
+        --cor-foco-acessivel: #88eeff; 
+    }
+
+    /* 2. Aplicação das novas variáveis em elementos chave */
+    body {
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto-principal);
+    }
+    
+    .card, section {
+        background-color: var(--cor-principal-claro);
+        border: 1px solid #333; 
+    }
+
+    /* Garante que o header e o footer tenham o fundo escuro */
+    .header, footer {
+        background-color: var(--cor-principal-claro);
+        border-top: 1px solid #333;
+    }
+    
+    /* Garante que o texto dentro de cards/links use a cor clara */
+    a, .btn {
+        color: var(--cor-texto-principal);
+    }
+}
+body {
+    /* O BACKGROUND-COLOR deve ser a sua variável de fundo claro */
+    background-color: var(--cor-fundo); 
+    /* O COLOR deve ser a sua variável de texto escuro */
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-principal, sans-serif); 
+    line-height: 1.6;
+}
+.header, footer, .card, section {
+    /* Use a variável para fundo de elemento (geralmente branco ou claro) */
+    background-color: var(--cor-principal-claro); 
+    /* Garanta que o texto herde a cor correta */
+    color: var(--cor-texto-principal);
+}
+@media (prefers-color-scheme: dark) {
+    /* As variáveis aqui DENTRO devem ser as CORES ESCURAS */
+    :root {
+        --cor-fundo: #121212; /* escuro */
+        --cor-texto-principal: #f0f0f0; /* claro */
+        /* ... etc. */
+    }
+
+    /* ESSES SELETORES SÃO CHAVE PARA FORÇAR A MUDANÇA */
+    body {
+        background-color: var(--cor-fundo); /* Muda para #121212 */
+        color: var(--cor-texto-principal); /* Muda para #f0f0f0 */
+    }
+
+    .header, footer, .card, section {
+        background-color: var(--cor-principal-claro);
+    }
+}
