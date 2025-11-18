@@ -75,3 +75,39 @@ html,body{height:100%;margin:0;background:var(--bg);color:#111}
   .hero-inner h1{font-size:1.6rem}
   .wrap{padding:.75rem}
 }
+/* Estilo geral da área de log */
+#cadastro-log {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+/* Estilo do item de log (Template JS) */
+.log-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: var(--cor-principal-claro); /* Usa sua variável clara */
+    border: 1px solid #eee;
+}
+
+/* Estilo para log de sucesso */
+.log-item.success {
+    border-left: 5px solid var(--cor-sucesso, #28a745); /* Cor verde */
+}
+
+.log-item h3 {
+    margin-top: 0;
+    color: var(--cor-sucesso, #28a745);
+}
+
+.btn-clear-log {
+    background-color: #dc3545; /* Cor vermelha */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
