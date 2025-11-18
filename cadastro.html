@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Voluntariado — Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand"><span class="brand-icon">🤝</span><span class="brand-text">Projeto ONG</span></div>
+      <button id="navToggle" class="hamburger" aria-label="Abrir menu">☰</button>
+      <nav id="mobileNav" class="main-nav">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="projeto.html" class="nav-link">Projetos</a>
+        <a href="cadastro.html" class="nav-link current">Cadastro</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="signup-panel">
+      <h1>Cadastre-se como voluntário</h1>
+      <p>Preencha o formulário abaixo. Entraremos em contato.</p>
+
+      <div id="successBox" class="notice hidden">✅ Cadastro realizado com sucesso!</div>
+
+      <form id="registerForm" autocomplete="off">
+        <div class="form-row">
+          <label for="fullName">Nome completo *</label>
+          <input id="fullName" name="fullName" type="text" required />
+        </div>
+
+        <div class="form-row">
+          <label for="emailAddr">E-mail *</label>
+          <input id="emailAddr" name="emailAddr" type="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="phoneNumber">Telefone *</label>
+          <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="(11) 99999-9999" required />
+        </div>
+
+        <div class="form-row split">
+          <div>
+            <label for="ageField">Idade *</label>
+            <input id="ageField" name="ageField" type="number" min="16" max="100" required />
+          </div>
+          <div>
+            <label for="whenAvail">Disponibilidade *</label>
+            <select id="whenAvail" name="whenAvail" required>
+              <option value="">Selecione...</option>
+              <option value="fins-de-semana">Fins de semana</option>
+              <option value="dias-uteis">Dias úteis</option>
+              <option value="flexivel">Horário flexível</option>
+              <option value="pontual">Ações pontuais</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="interestArea">Área de interesse *</label>
+          <select id="interestArea" name="interestArea" required>
+            <option value="">Selecione...</option>
+            <option value="distribuicao">Distribuição de Alimentos</option>
+            <option value="educacao">Educação e Capacitação</option>
+            <option value="saude">Apoio à Saúde</option>
+            <option value="admin">Apoio Administrativo</option>
+            <option value="qualquer">Qualquer área</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="experience">Experiência (opcional)</label>
+          <textarea id="experience" name="experience" rows="3" placeholder="Conte sobre suas experiências..."></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="motivation">Motivação (opcional)</label>
+          <textarea id="motivation" name="motivation" rows="3" placeholder="Por que quer ser voluntário?"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn solid">Enviar Cadastro</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="volunteers wrap">
+      <h2>Voluntários Cadastrados</h2>
+      <div id="volunteersTable"> <!-- preenchido via JS --> </div>
+      <div class="form-actions">
+        <button id="clearBtn" class="btn ghost">Limpar Lista</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2025 Projeto ONG</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

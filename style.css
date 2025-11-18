@@ -1,0 +1,77 @@
+:root{
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --accent: #0f766e; /* teal-ish */
+  --accent-2:#2563eb; /* blue */
+  --muted:#6b7280;
+  --shadow: 0 6px 18px rgba(15,23,42,0.06);
+  --radius:12px;
+  --container:1100px;
+  font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+}
+
+/* Reset */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:#111}
+.wrap{max-width:var(--container);margin:0 auto;padding:1.25rem}
+
+/* Header */
+.site-header{background:linear-gradient(90deg,#e6fffa 0%, #ecfeff 100%);box-shadow:0 2px 10px rgba(2,6,23,0.04);position:sticky;top:0;z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:700;color:var(--accent)}
+.brand-icon{font-size:1.5rem}
+.hamburger{background:none;border:0;font-size:1.25rem;cursor:pointer}
+
+/* Nav */
+.main-nav{display:flex;gap:1rem}
+.nav-link{padding:.6rem .8rem;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:600}
+.nav-link.current{background:transparent;border:1px solid rgba(37,99,235,0.12);color:var(--accent-2)}
+
+/* Hero */
+.hero-alt{padding:6rem 0;background:linear-gradient(180deg,#f0f9ff,transparent)}
+.hero-inner{text-align:center}
+.hero-inner h1{font-size:2.25rem;margin-bottom:.6rem;color:#052f2f}
+.hero-inner p{color:var(--muted);margin-bottom:1rem}
+.hero-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+
+/* Buttons */
+.btn{display:inline-block;padding:.8rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid transparent}
+.btn.solid{background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;color:var(--accent-2);border:1px solid rgba(37,99,235,0.12)}
+
+/* Sections */
+.about-alt{padding:2.5rem 0}
+.hero-small{padding:3.25rem 0;text-align:center}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:1.25rem 0}
+.project-card{background:var(--card);padding:1.25rem;border-radius:12px;box-shadow:var(--shadow);text-align:center}
+.pc-icon{font-size:1.75rem;margin-bottom:.6rem}
+
+/* Signup panel */
+.signup-panel{background:linear-gradient(180deg,#fff,#fafafa);padding:1.25rem;border-radius:12px;box-shadow:var(--shadow);margin:1.25rem 0}
+.signup-panel h1{margin-top:0}
+.form-row{margin-bottom:.85rem}
+.form-row label{display:block;margin-bottom:.4rem;font-weight:600;color:#0f172a}
+.form-row input,.form-row select,.form-row textarea{width:100%;padding:.65rem;border-radius:8px;border:1px solid #e6e9ef;background:#fff}
+.form-row.split{display:flex;gap:1rem}
+.form-row.split > div{flex:1}
+
+/* Volunteers list */
+.volunteers{margin-top:1.75rem}
+.notice{padding:.75rem;border-radius:8px;margin-bottom:.9rem;background:#ecfdf5;color:#065f46}
+.hidden{display:none}
+
+/* Table style */
+#volunteersTable table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+#volunteersTable th,#volunteersTable td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid #f1f5f9}
+#volunteersTable th{background:#f8fafc;color:#0f172a;font-weight:700}
+
+/* Footer */
+.site-footer{padding:2rem 0;text-align:center;color:var(--muted)}
+
+/* Responsive tweaks */
+@media (max-width:800px){
+  .main-nav{position:absolute;right:1rem;top:64px;background:var(--card);padding:.5rem;border-radius:8px;box-shadow:var(--shadow);flex-direction:column;display:none}
+  .main-nav.show{display:flex}
+  .hero-inner h1{font-size:1.6rem}
+  .wrap{padding:.75rem}
+}
